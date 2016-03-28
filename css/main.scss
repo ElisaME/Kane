@@ -1,0 +1,431 @@
+/* --------------------Variables-------------------------- */
+$blanco:#ffffff;
+$verde:#28A75E;
+$centrar:center;
+$gris:#354657;
+$cafe:#443E44;
+$naranja:#FA6900;
+$cafe-claro:#AB552C;
+/* ----------------------Mixin---------------------------- */
+/* Mixin de Subtitulos */
+@mixin subtitulo ($color, $linea){
+	h1{
+	font-size: 4em;
+	padding-bottom: 1.5%;
+	text-align: center;
+	color: $color;
+	}
+	hr{
+		width: 20%;
+		border-color: $linea !important;
+		height: 3px;
+	}
+}
+/* Mixin de colores de paleta */
+@mixin palette ($color-palette){
+	width: 200px;
+	height: 150px;
+	display: inline-block;
+	background-color: $color-palette;
+}
+/*Mixin boton*/
+@mixin boton-cafe ($ft-size){
+	background-color: $cafe !important;
+	border: none;
+	color: $blanco;
+	font-size: ($ft-size)
+}
+/*Global*/
+body{
+	font-family:Roboto;
+}
+/*----------------------MENU----------------------------- */
+.navbar-default{
+	background-color: $verde; 
+	.navbar-nav {
+		a{
+		color: $blanco !important;
+			&:hover{
+				background-color:#4ED04E !important;
+			}
+		}
+		.active a{
+			background-color:#4ED04E !important;
+		}
+	}
+	ul{
+		margin-top: 33px !important;
+	}
+	.navbar-toggle, .navbar-toggle:hover{
+		background-color: $verde;
+	}
+	/*.navbar-toggle li :hover{
+		background-color: #4ED04E !important;
+	}*/
+}
+/* -------------------------Banner-------------------------- */
+#banner{
+	background-image: url("../img/carousel-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:center;
+	padding: 5%;
+	h1,p{
+		color: $blanco;
+		text-align:$centrar;
+		font-size: 4em;
+	}
+	p{
+		font-size: 2em;
+	}
+}
+@media screen and (max-width: 768px){
+	h1{
+		font-size: 2em !important;
+	}
+	p{
+		font-size: 1em !important;
+	}
+}
+/*-------------------------Palette-------------------------*/
+#palette{
+	.sub{
+	@include subtitulo ($gris, $gris);
+	}
+	.row{
+		margin-bottom: .5%;
+	}
+	.color{
+		font-size: 18px;
+		margin-right: -.6em!important;
+	}
+	.color1{
+		@include palette (#69d2e7);
+	}
+	.color2{
+		@include palette (#a7dbdb);
+	}
+	.color3{
+		@include palette (#e0e4cc);
+	}
+	.color4{
+		@include palette (#f38630);
+	}
+	.color5{
+		@include palette (#fa6900);
+	}
+	.color6{
+		@include palette (#E94C6F);
+	}
+	.color7{
+		@include palette (#542733);
+		color: white;
+	}
+	.color8{
+		@include palette (#5A6A62);
+	}
+	.color9{
+		@include palette (#C6D5CD);
+	}
+	.color10{
+		@include palette (#FDF200);
+	}
+	.color11{
+		@include palette (#DB3340);
+	}
+	.color12{
+		@include palette (#E8B71A);
+	}
+	.color13{
+		@include palette (#F7EAC8);
+	}
+	.color14{
+		@include palette (#1FDA9A);
+	}
+	.color15{
+		@include palette (#28ABE3);
+	}
+	.color16{
+		@include palette (#588C73);
+	}
+	.color17{
+		@include palette (#F2E394);
+	}
+	.color18{
+		@include palette (#F2AE72);
+	}
+	.color19{
+		@include palette (#D96459);
+	}
+	.color20{
+		@include palette (#8C4646);
+	}
+	.color21{
+		@include palette (#D0C91F);
+	}
+	.color22{
+		@include palette (#85C4B9);
+	}
+	.color23{
+		@include palette (#008BBA);
+	}
+	.color24{
+		@include palette (#DF514C);
+	}
+	.color25{
+		@include palette (#DC403B);
+	}
+}
+@media screen and (max-width:800px){
+	#palette div .color{
+		width: 20%;
+		font-size: 12px;
+	}
+}
+/*----------------------------About Us----------------------*/
+#AboutUs{
+	background-color: $gris;
+	padding: 2%;
+	.sub{
+		@include subtitulo ($blanco, $blanco);
+	}
+	p{
+		color: $blanco;
+	}
+	img{
+		width: 450px; 
+	}
+	.progress{
+		border: 2px solid white;
+		height: 10px !important;
+	}
+	.progress-bar{
+		background-color: #F5A22A !important;
+	}
+	.barras p{
+		margin-top: -1% !important;
+	}
+}
+/*-------------------------What We Do---------------------*/
+#WeDo{
+	background-color: $verde;
+	.sub{
+		@include subtitulo ($blanco, $blanco);
+		p{color: $blanco};
+	}
+	.servicio{
+		padding:4%;
+		h2{
+		color: $blanco;
+		}
+		p{
+		color: #B2B2B2;
+		}
+		img{
+			padding: 2%;
+			background: linear-gradient(to right,  #6A7580 0%,#6A7580 45%,#818E9C 45%,#818E9C 55%,#354658 55%,#354658 100%);
+		}
+		&:hover{
+			background-color: rgba(0,0,0,0.5);
+			h2{
+				color: #FA6900;
+				border-bottom: 1px solid white;
+			}
+			img{
+				background: rgba(250,105,0,0.4)!important;
+				-webkit-transform:rotate(45deg);
+    			-moz-transform:rotate(45deg);
+    			-o-transform:rotate(45deg);
+			}
+		}
+	}
+	.btn-default{
+		@include boton-cafe (1.5em);
+	}
+}
+/*---------------------------TEAM-----------------------*/
+#team{
+	background-color: $verde;
+	padding-bottom: 5%;
+	.sub{
+		@include subtitulo ($blanco, $blanco);
+		p{color: $blanco};
+	}
+	.perfil{
+		text-align: center;
+		padding: 0 4%;
+		img{
+			width: 150px;
+		}
+		.nombre{
+			color: white;
+			font-size: 20px;
+		}
+		.cargo{
+			color: $gris;
+			font-size: 12px;
+		}
+		.desc{
+			color: #B2B2B2;
+		}
+		i{
+			font-size: 20px;
+			color: #B2B2B2;
+			padding: 0, 2%;
+		}
+	}
+}
+/*------------------------BEST PRICE GUARANTEED--------------*/
+#price{
+	background-color: $gris;
+	padding-bottom: 5%;
+	.sub{
+		@include subtitulo ($blanco, $blanco);
+		p{color: $blanco};
+		margin-bottom:10%;
+	}
+	.cuadro1{
+		border:1px solid $verde;
+		margin: 5% 2%;
+		&:hover{
+			border: 1px solid $naranja;
+			margin-top: -10%;
+		}
+	}
+	.paquete{
+		padding: 10%;
+		color: $blanco;
+		font-size: 20px;
+	}
+	.bg-cafe{
+		background-color: $cafe-claro;
+	}
+	.precio{
+		background-color: $verde;
+		color: $blanco;
+		font-size: 12px;
+		padding:10%;
+		span{
+			font-size: 4em;
+		}
+	}
+	.cafe,.blanco, .azul{
+		padding: 2%;
+	}
+	.cafe{
+		background-color: $cafe-claro;
+		color: $blanco;
+	}
+	.blanco{
+		background-color: $blanco;
+		color: $gris;
+	}
+	.azul{
+		color: $blanco;
+	}
+	.sign{
+		padding: 4%;
+		.btn-default{
+			@include boton-cafe (16px);	
+		}
+	}
+	
+}
+/* ---------------------------Clients------------------------ */
+#clients{
+	background-color: $gris;
+	text-align: center;
+	color: $blanco;
+	.sub{
+		@include subtitulo ($blanco,$blanco);
+	}
+	.naranja{
+		color: $naranja;
+	}
+	.desc{
+		margin-bottom: 5%;
+		p{
+		width: 60%;
+		margin: 0 auto;
+		font-style: italic;
+		font-size: 18px;
+		margin-top: 2%;
+		}	
+	}
+}
+/*---------------------CONTACTO--------------------*/
+#contact{
+	background-color: $gris;
+	.sub{
+		@include subtitulo ($blanco,$blanco);
+		p{color: $blanco;}
+	}
+	.formulario{
+		padding: 0 20%;
+		margin-bottom: 5%;
+	}
+	.btn-default{
+		@include boton-cafe (16px);
+	}
+	.left{
+		color: $blanco;
+		text-align: left;
+	}
+}
+@media screen and (max-width: 768px){
+	#contact{
+		.formulario{
+			padding: 0 5%;
+		}
+	}
+}
+/*---------------------Redes-----------------------*/
+#redes{
+	background-image: url("../img/img-divider-img.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	height: 300px;
+	.redes{
+		padding: 10%;
+	}
+	i{
+		color: $blanco;
+		font-size: 5em;
+		padding: 0 2%;
+	}
+}
+@media screen and (max-width: 768px){
+	#redes{
+		height: auto;
+		i{
+			font-size: 4em;
+			margin-top: 10%;
+		}
+	}
+}
+/*--------------------------Footer-----------------------*/
+#footer{
+	background-color: $verde;
+	color: $blanco;
+	.sub{
+		font-size: 20px;
+		text-align: center;
+		margin: 2%;
+	}
+	hr{
+		color: $blanco;
+		width: 20%;
+	}
+	i{
+		font-size: 15px;
+		padding: 0 2%;
+	}
+	.cafe{
+		background-color: $cafe;
+		color: $naranja;
+	}
+	.btn-default{
+		@include boton-cafe (16px);
+	}
+}
